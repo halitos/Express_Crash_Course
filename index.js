@@ -1,5 +1,10 @@
 const express = require("express");
 const app = express();
+const exphbs = require("express-handlebars");
+
+//handlebars Middleware
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Body parser Middleware
 app.use(express.json());
